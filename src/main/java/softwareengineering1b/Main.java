@@ -5,9 +5,9 @@
 package softwareengineering1b;
 
 import org.joda.time.DateTime;
-import sofwareengineering1a.CourseProgramme;
-import sofwareengineering1a.Module;
-import sofwareengineering1a.Student;
+import softwareengineering1a.CourseProgramme;
+import softwareengineering1a.Module;
+import softwareengineering1a.Student;
 import java.util.ArrayList;
 
 /**

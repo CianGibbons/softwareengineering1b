@@ -11,5 +11,5 @@ repositories {
 dependencies {
     testImplementation     'junit:junit:4.13'
     implementation 'org.terasoluna.gfw:terasoluna-gfw-jodatime:5.7.0.RELEASE'
-    implementation 'com.github.CianGibbons:softwareengineering1a:1.1'
+    implementation 'com.github.CianGibbons:softwareengineering1a:1.1.1'
 }
