@@ -21,8 +21,7 @@ public class Main {
      */
     public static void main(String[] args) {
         
-        // Create Courses
-        // public CourseProgramme(String name, DateTime academicStartDate, DateTime academicEndDate)
+        // Create Courses and store them in a list of all courses
         ArrayList<CourseProgramme> listOfAllCourses = new ArrayList<>();
         CourseProgramme BCT = new CourseProgramme("BCT", new DateTime(2021, 9, 6, 9, 0, 0), new DateTime(2022, 5, 31, 6, 0, 0));
         CourseProgramme BACT = new CourseProgramme("BACT", new DateTime(2021, 9, 6, 9, 0, 0), new DateTime(2022, 5, 31, 6, 0, 0));
@@ -32,7 +31,7 @@ public class Main {
         listOfAllCourses.add(BACT);
         listOfAllCourses.add(BAIT);
 
-        //SubLists of Courses used to Associate Modules with Courses
+        //Create SubLists of Courses used to Associate Modules with Courses
         //BCT BAIT
         ArrayList<CourseProgramme> bctAndBaitCourses = new ArrayList<>();
         bctAndBaitCourses.add(BCT);
@@ -49,8 +48,7 @@ public class Main {
         ArrayList<CourseProgramme> bactCourseAsList = new ArrayList<>();
         bactCourseAsList.add(BACT);
         
-        // Create Modules
-        // public Module(String name, String id)
+        // Create Modules and store in a list of all modules
         ArrayList<Module> listOfAllModules = new ArrayList<>();
         Module professionalSkills = new Module("Advanced Professional Skills","CT436", listOfAllCourses);
         Module machineLearning = new Module("Machine Learning","CT4101", bctAndBaitCourses);
@@ -61,17 +59,16 @@ public class Main {
         Module networksAndDataCommunications = new Module("Networks and Data Communications 2","CT3531", listOfAllCourses);
         Module programmingParadigms = new Module("Programming Paradigms","CT331", bactCourseAsList);
         
-        listOfAllModules.add(professionalSkills);//BCT, BACT, BAIT (All Courses Currently Available)
+        listOfAllModules.add(professionalSkills);//BCT, BACT, BAIT (Module available to all courses currently available)
         listOfAllModules.add(machineLearning);//BCT, BAIT
-        listOfAllModules.add(softwareEngineering);//BCT, BACT, BAIT (All Courses Currently Available)
+        listOfAllModules.add(softwareEngineering);//BCT, BACT, BAIT (Module available to all courses currently available)
         listOfAllModules.add(graphicsAndImageProcessing);//BCT, BACT
         listOfAllModules.add(humanComputerInteraction);//BACT, BAIT
         listOfAllModules.add(gamesProgramming);//BCT, BACT
-        listOfAllModules.add(networksAndDataCommunications);//BCT, BACT, BAIT (All Courses Currently Available)
+        listOfAllModules.add(networksAndDataCommunications);//BCT, BACT, BAIT (Module available to all courses currently available)
         listOfAllModules.add(programmingParadigms);//BACT
         
-        // Create Students
-        // public Student(String name, DateTime dob)
+        // Create Students and store in a list of all students
         ArrayList<Student> listOfAllStudents = new ArrayList<>();
         Student cianGibbons = new Student("Cian Gibbons", new DateTime(2000, 1, 21, 11, 15, 0));
         Student jamieLarkin = new Student("Jamie Larkin", new DateTime(2001, 1, 21, 14, 35, 0));
@@ -100,7 +97,7 @@ public class Main {
         listOfAllStudents.add(alannaDaly);
         
         
-        //Register Students for their Course
+        //Register Students for their Courses -> Adding students to the course's list of students and Adding courses to the student's list of courses
         BCT.addStudent(cianGibbons);
         BCT.addStudent(jamieLarkin);
         BCT.addStudent(joeRibbon);
@@ -115,7 +112,7 @@ public class Main {
         BAIT.addStudent(adamMurphy);
         BAIT.addStudent(alannaDaly);
         
-        //Register Students for their Modules -> In turn adding those modules on the students list
+        //Register Students for their Modules -> Adding students to the module's list of students and Adding modules to the student's list of modules
         
         professionalSkills.addStudent(cianGibbons);
         machineLearning.addStudent(cianGibbons);
@@ -162,16 +159,23 @@ public class Main {
         professionalSkills.addStudent(alannaDaly);
             
         // Print out the Results
+        
+        //Print out the List of All Courses on Offer
+        // - Including the Course Name, Academic Start Date, Academic End Date, List of Modules and List of Students
         System.out.println("\nList Of Courses: ");
         for(int i = 0; i < listOfAllCourses.size(); i++){
             System.out.println(listOfAllCourses.get(i));
         }
         
+        //Print out the List of All Modules On Offer
+        // - Including the Module Name, Module ID, List of Students and List of Courses Associated
         System.out.println("\nList Of Modules: ");
         for(int i = 0; i < listOfAllModules.size(); i++){
             System.out.println(listOfAllModules.get(i));
         }
         
+        //Print out the List of All Students
+        // - Including the Student Name, Student ID, List of Courses and List of Modules
         System.out.println("\nList Of Students: ");
         for(int i = 0; i < listOfAllStudents.size(); i++){
             System.out.println(listOfAllStudents.get(i));
